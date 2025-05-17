@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Matching Game - Score & Level Up</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Memory Matching Game</h1>
+  <div id="scoreBoard" aria-live="polite" aria-atomic="true">Score: 0</div>
+  <div id="levelIndicator" aria-live="polite" aria-atomic="true">Level: 1</div>
+  <div id="gameBoard" role="grid" aria-label="Memory matching cards"></div>
+  <div id="levelUpMessage" role="alert" aria-live="assertive"></div>
+  <button id="restartBtn" aria-label="Restart the game">Restart Game</button>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background:linear-gradient(to bottom, rgb(246, 22, 22),rgb(244, 77, 77),rgb(95, 93, 248), rgb(36, 36, 245));
+  color: #e0e6e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem 1rem;
+  user-select: none;
+}
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.25rem;
+  color: #4fd1c5;
+  text-shadow: 0 0 10px #4fd1c5bb;
+}
+#scoreBoard {
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  color: #82e0aa;
+}
+#levelIndicator {
+  margin-bottom: 1.6rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.9px;
+  color: #f5b041;
+}
+#gameBoard {
+  padding-left: 10rem;
+  display: grid;
+  gap: 15px;
+  justify-content: center;
+  max-width: 650px;
+  width: 100%;
+}
+.card {
+  width: 80px;
+  height: 110px;
+  perspective: 900px;
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  .card {
+    width: 60px;
+    height: 80px;
+  }
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  box-shadow: 0 6px 8px rgba(0, 255, 94, 0.944);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+}
+.card-front {
+  background: #1a232a;
+  box-shadow: inset 0 0 20px #4fd1c5aa, 0 0 8px #4fd1c5bb;
+  color: #4fd1c5;
+}
+.card-back {
+  background: linear-gradient(135deg, #4fd1c5, #18a999);
+  color: #121212;
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 18px #16a08fcc;
+}
+#levelUpMessage {
+  margin-top: 1rem;
+  color: #f7dc6f;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-shadow: 0 0 12px #f7dc6f;
+  visibility: hidden;
+}
+#restartBtn {
+  margin-top: 1.3rem;
+  background-color: #4fd1c5;
+  color: #121212;
+  border: none;
+  border-radius: 36px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.9rem 2.6rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px #30b9a8cc;
+  transition: background-color 0.3s ease;
+}
+#restartBtn:hover {
+  background-color: #33b8a4;
+  box-shadow: 3px 3px  #1a232aaf;
+}
